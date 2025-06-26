@@ -1,0 +1,27 @@
+comandos-uteis.md
+
+# Comandos Úteis em Azure CLI e PowerShell
+
+Este arquivo reúne os principais comandos para gerenciamento de VMs no Azure, tanto via CLI quanto via PowerShell.
+
+---
+
+## 🧩 Azure CLI
+
+```bash
+# Login na conta Azure
+az login
+
+# Criar um grupo de recursos
+az group create --name grupo-estudo-vms --location eastus
+
+# Criar uma VM Linux com Ubuntu
+az vm create \
+  --resource-group grupo-estudo-vms \
+  --name vmUbuntu \
+  --image UbuntuLTS \
+  --admin-username azureuser \
+  --generate-ssh-keys
+
+# Abrir porta 22 (SSH)
+az vm open-port --port 22 --resource-group grupo-estudo-vms --name vmUbuntu

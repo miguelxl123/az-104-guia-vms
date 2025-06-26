@@ -1,0 +1,51 @@
+guia-criacao-vms.md
+
+# Guia Teórico de Criação de Máquinas Virtuais no Azure
+
+Este guia descreve o processo teórico para a criação de uma máquina virtual no Azure, com base nas boas práticas recomendadas.
+
+## ✅ Etapas
+
+### 1. Criar um Grupo de Recursos
+
+O grupo de recursos é uma estrutura lógica para agrupar e gerenciar recursos do Azure.
+
+Exemplo: `grupo-estudo-vms`
+
+### 2. Criar uma Rede Virtual (VNet) e Sub-rede
+
+A VNet permite que a VM se comunique com outros recursos e com a internet.
+
+Exemplo:
+
+- VNet: `vnet-estudo`
+- Sub-rede: `subnet-vms`
+
+### 3. Criar a Máquina Virtual
+
+Durante a criação da VM, serão definidos:
+
+- Sistema operacional: Ubuntu Server 20.04 ou Windows Server
+- Tamanho da VM: ex: Standard_B1s (econômico)
+- Nome de usuário e senha ou chave SSH
+
+### 4. Configurar Porta de Acesso
+
+- Linux: habilitar porta 22 (SSH)
+- Windows: habilitar porta 3389 (RDP)
+
+### 5. Validar e Criar
+
+Revisar todas as configurações antes de criar.
+
+### 6. Conectar na VM
+
+- **Linux:** via terminal → `ssh usuario@ip_publico`
+- **Windows:** via "Conexão de Área de Trabalho Remota"
+
+---
+
+## 📍 Observações
+
+- É possível automatizar esse processo com CLI, PowerShell ou ARM templates.
+- Monitoramento e backups devem ser ativados após a criação para garantir a continuidade e segurança da operação.
